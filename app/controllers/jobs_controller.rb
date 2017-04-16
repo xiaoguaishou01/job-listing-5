@@ -1,5 +1,6 @@
 class JobsController < ApplicationController
 before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
+before_action :validate_search_key, only: [:search]
 
   def show
     @job = Job.find(params[:id])
@@ -50,6 +51,35 @@ before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destro
     @job.destroy
     redirect_to jobs_path
   end
+
+  def search
+    if @query_string.present?
+    search_result = Job.ransack(@search_criteria).result(:distinct => true)
+    @jobs = search_result.recent
+    end
+  end
+
+  protected
+
+  def validate_search_key
+    @query_string = params[:q].gsub(/\\|\'|\/|\?/, "")
+    if params[:q].present?
+      @search_criteria =  {
+        title_cont: @query_string
+      }
+    end
+  end
+
+  def search_criteria(query_string)
+    { :title_cont => query_string }
+  end
+
+  def render_highlight_content(job,query_string)
+    excerpt_cont = excerpt(job.title, query_string, radius: 500)
+    highlight(excerpt_cont, query_string)
+  end
+
+
   private
 
   def job_params

@@ -1,0 +1,40 @@
+<div id="search-page" class="container-fluid jobs-show-page">
+  <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+    <% if @jobs.blank?%>
+      <br>
+      <div>
+        抱歉！没有搜索到结果！
+      </div>
+    <% else %>
+    <table class="table table-boldered">
+        <thead>
+            <tr>
+                <td>职缺</td>
+                <td>工作种类</td>
+                <td>薪资下限</td>
+                <td>薪资上限</td>
+                <td>公司名称</td>
+                <td>公司地点</td>
+                <td>刊登时间</td>
+            </tr>
+        </thead>
+        <tbody>
+            <% @jobs.each do |job| %>
+            <tr>
+                <td><%= link_to(job.title, job_path(job)) %></td>
+                <td><%#= job.sort%></td>
+                <td><%= job.wage_lower_bound %></td>
+                <td><%= job.wage_upper_bound %></td>
+                <td> <%#= job.CompanyName %></td>
+                <td>
+                  <span class="fa fa-map-marker"></span>
+                  <%#= job.company %>
+                </td>
+                <td><%= job.created_at %></td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+    <% end %>
+  </div>
+</div>

@@ -1,7 +1,5 @@
 
-<div class="pull-right">
-  <%= link_to("Add a job", new_job_path, :class => "btn btn-default" ) %>
-</div>
+
 <div class="dropdown clearfix pull-right">
     <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
       排序
@@ -21,7 +19,8 @@
         </li>
     </ul>
 </div>
-<table class="table table-boldered">
+<div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+<table class="table table-bordered table-hover">
   <thead>
        <tr>
            <td>职缺</td>
@@ -50,3 +49,4 @@
   <% end %>
   </tbody>
 </table>
+</div>
