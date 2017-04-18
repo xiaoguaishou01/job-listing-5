@@ -115,7 +115,7 @@
 }
 
 .navbar-default{
-  background: #d7d2cc;
+  //background: #d7d2cc;
 
   }
  //background: linear-gradient(to bottom right, #304352, #d7d2cc);}
@@ -171,7 +171,7 @@ body{
   margin-top: -90px;
   padding: 5em;
   font-size: 2em;
-  background: #d7d2cc;
+  //background: #d7d2cc;
   height: auto;
 
 }
@@ -197,7 +197,7 @@ body{
 /*-- gallery --*/
 .gallery {
   padding: 4em 0;
-  background: #d7d2cc;
+  //background: #d7d2cc;
 
 }
 .da-thumbs {
@@ -251,5 +251,229 @@ body{
 /*--//gallery--*/
 
 .seekers-say{
-  background: #d7d2cc;
+  //background: #d7d2cc;
 }
+
+
+/*!index/modules/exposure-project-new/main.less*/
+ .main {
+	width:1200px;
+	margin:0 auto
+}
+
+ .project_list {
+	padding-bottom:50px;
+  width:1240px;
+  text-align: center;
+
+}
+ .project_list .project_type {
+	position:relative;
+	padding-top:32px;
+	height:98px;
+	border-top-left-radius:3px;
+	border-top-right-radius:3px;
+	background-repeat:no-repeat;
+	background-size:cover;
+	color:#fff;
+	font-size:16px;
+	font-weight:700
+}
+ .project_list .project_type.develop {
+	background-image:url(https://www.lgstatic.com/parttime-jobs/static/index/modules/exposure-project-new/img/develop_b5b88c2.jpg)
+}
+ .project_list .project_type.design {
+	background-image:url(https://www.lgstatic.com/parttime-jobs/static/index/modules/exposure-project-new/img/design_763e4fb.jpg)
+}
+ .project_list .project_type.market {
+	background-image:url(https://www.lgstatic.com/parttime-jobs/static/index/modules/exposure-project-new/img/market_8b5fa0b.jpg)
+}
+ .project_list .project_type.product {
+	background-image:url(https://www.lgstatic.com/parttime-jobs/static/index/modules/exposure-project-new/img/product_b96da5e.jpg)
+}
+ .project_list .project_type .icons {
+	width:36px;
+	font-size:36px;
+	display:block;
+	margin:0 auto 14px;
+  overflow: hidden;
+  text-overflow:ellipsis;
+}
+ .project_list .project_type .new {
+	position:absolute;
+	left:218px;
+	top:26px;
+	display:inline-block;
+	padding:0 4px 2px;
+	font-size:12px;
+	line-height:14px;
+	background-color:#ec7168
+}
+ .project_list .project_type .new:after {
+	position:absolute;
+	left:4px;
+	bottom:-5px;
+	display:block;
+	width:0;
+	height:0;
+	content:'';
+	border:5px solid red;
+	border-color:transparent transparent transparent #ec7168
+}
+ .project_list .project_main {
+	height:313px;
+	padding:36px 30px 0;
+	border:1px solid #e5e8ef;
+	border-top:0;
+	border-bottom-left-radius:3px;
+	border-bottom-right-radius:3px
+}
+ .project_list .empty {
+	margin-top:160px;
+	padding-top:152px;
+	background:url(../common/img/empty.png) no-repeat center top;
+	background-size:125px 120px;
+	text-align:center;
+	color:#555
+}
+ .project_list ul {
+	zoom:1;
+	text-align:center
+}
+ .project_list ul:before, .project_list ul:after {
+	content:"";
+	display:table
+}
+ .project_list ul:after {
+	clear:both
+}
+ .project_list ul>li {
+	position:relative;
+	width:380px;
+	float:left;
+	margin:0 0 30px 30px;
+	cursor:pointer
+}
+ .project_list ul>li:nth-child(3n+1) {
+	margin-left:0
+}
+ .project_list ul>li:hover {
+	border-color:#7e8090
+}
+ .project_list .status {
+	margin-top:30px
+}
+ .project_list .status span {
+	padding:5px 10px;
+	color:#fff;
+	font-size:14px;
+	-webkit-border-radius:15px;
+	-moz-border-radius:15px;
+	border-radius:15px;
+	-moz-background-clip:padding;
+	-webkit-background-clip:padding-box;
+	background-clip:padding-box
+}
+ .project_list .status span.recruiting {
+	background-color:#3dca99
+}
+ .project_list .status span.working {
+	background-color:#ed7266
+}
+ .project_list .status span.over {
+	background-color:#ccc
+}
+ .project_list h3 {
+	margin:0;
+	color:#333;
+	font-size:18px;
+	font-weight:700;
+	width:100%;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+	word-wrap:normal
+}
+ .project_list .price {
+	margin-top:10px;
+	font-size:16px;
+	color:#555
+}
+ .project_list .range {
+	color:#ff734b
+}
+ .project_list .category_list {
+	margin-top:12px;
+	height:28px;
+	overflow:hidden
+}
+ .project_list .category_tag {
+	display:inline-block;
+	height:18px;
+	padding:2px 8px;
+	-webkit-border-radius:12px;
+	-moz-border-radius:12px;
+	border-radius:12px;
+	-moz-background-clip:padding;
+	-webkit-background-clip:padding-box;
+	background-clip:padding-box;
+	background-color:#f0f2f5;
+	font-size:12px;
+	color:#82888a;
+	margin:3px 5px
+}
+ .project_list .bottom_data {
+	margin-top:32px;
+	zoom:1
+}
+ .project_list .bottom_data:before, .project_list .bottom_data:after {
+	content:"";
+	display:table
+}
+ .project_list .bottom_data:after {
+	clear:both
+}
+ .project_list .bottom_data>div {
+	width:33.3%;
+	height:38px;
+	float:left;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+	border-right:1px dotted #d9d9d9;
+	text-align:center
+}
+ .project_list .bottom_data>div:last-child {
+	border-right:0
+}
+ .project_list .bottom_data .title {
+	transform:translateY(-4px);
+	color:#999
+}
+ .project_list .bottom_data .txt {
+	font-size:12px;
+	color:#666
+}
+ .project_list .bottom_data .txt strong {
+	font-size:18px
+}
+ .project_list .time {
+	margin-top:40px;
+	text-align:center;
+	color:#999
+}
+ .project_list .time .icons {
+	display:inline-block;
+	vertical-align:middle;
+	font-size:14px;
+	color:#666;
+	margin-right:8px
+}
+ .project_list .time .txt {
+	display:inline-block;
+	vertical-align:middle
+}
+.icon-develop:before {
+	//content:"\e916"
+}
+/*!index/modules/exposure-project/main.less*/

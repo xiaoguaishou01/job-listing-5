@@ -8,6 +8,7 @@ before_action :validate_search_key, only: [:search]
       flash[:warning] = "This Job already archieved"
       redirect_to root_path
     end
+
   end
 
   def index

@@ -1,52 +1,93 @@
+<div class="row">
+  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <!--<ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>-->
 
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src="http://finda.photo/image/10169/thumbnail/original
+      " alt="...">
 
-<div class="dropdown clearfix pull-right">
-    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-      排序
-        <span class="caret"></span>
-    </button>
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
-        <li>
-          <%= link_to("按照薪资下限排序", jobs_path(:order => "by_lower_bound")) %>
-        </li>
-        <li>
-            <%= link_to("按照薪资上限排序", jobs_path(:order => "by_upper_bound")) %>
+      <div class="carousel-caption">
+        <h2>免费发布简历</h2>
+        <h2>一小时内为你成功对接企业</h2>
+        <!--<p class="lead"><a class="btn btn-lg btn-danger" href="/jobs">马上应征</a></p>--->
+      </div>
+    </div>
+    <!--<div class="item">
+    <img src="http://finda.photo/image/8838/thumbnail/original" alt="...">
 
-        </li>
-        <li>
-          <%= link_to("按照发表时间排序", jobs_path ) %>
-
-        </li>
-    </ul>
+    <div class="carousel-caption">
+    <h2>Is it still anxious to find a job?</h2>
+    <p class="lead"><a class="btn btn-lg btn-danger" href="/jobs">马上应征</a></p>
+  </div>
 </div>
-<div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
-<table class="table table-boldered table-hover ">
-  <thead>
-       <tr>
-           <td>职位名称</td>
-           <td>工作种类</td>
-           <td>薪资下限</td>
-           <td>薪资上限</td>
-           <td>公司名称</td>
-           <td>公司地点</td>
-           <td>刊登时间</td>
-       </tr>
+<div class="item">
+<img src="http://finda.photo/image/9960/thumbnail/original" alt="...">
 
-   </thead>
-   <tbody>
-  <% @jobs.each do |job| %>
-  <tr>
-    <td><%= link_to(job.title, job_path(job)) %></td>
-    <td><%= job.sort%></td>
-    <td><%= job.wage_lower_bound %></td>
-    <td><%= job.wage_upper_bound %></td>
-    <td><%= job.CompanyName%></td>
-    <td>
-      <span class="fa fa-map-marker"></span>
-      <%= job.CompanyLocation%></td>
-    <td><%= job.created_at %></td>
-  </tr>
-  <% end %>
-  </tbody>
-</table>
+<div class="carousel-caption">
+<h2>Is it still anxious to find a job?</h2>
+
+</div>
+</div>
+</div>
+
+<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+<span class="glyphicon glyphicon-chevron-left"></span>
+<span class="sr-only">Previous</span>
+</a>
+<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+<span class="glyphicon glyphicon-chevron-right"></span>
+<span class="sr-only">Next</span>
+</a>--->
+</div>
+</div>
+
+<div class="container-1">
+
+  <h1 class="text-center">热门职位招聘中</h1>
+  <hr>
+</div>
+
+
+<div class="project_list container">
+  <ul class="list-unstyled">
+    <% @jobs.each do |job| %>
+    <li>
+      <a href="<%= job_path(job) %>">
+        <div class="project_type develop"><i class="icons icon-develop"></i>
+          <%= job.sort%>
+          <i class="new">HOT</i></div>
+          <div class="project_main">
+
+            <h3><%= job.title%></h3>
+            <div class="price">
+              <span class="range">
+                <%= job.wage_lower_bound%>-
+                <%= job.wage_upper_bound %>
+              </span>
+            </div>
+            <span class="fa fa-map-marker"></span>
+            <%= job.CompanyLocation%>
+            <div class="status">
+              <span class="recruiting">招募中</span>
+            </div>
+            <div class="bottom_data">
+              <div><div class="title">已申请</div>
+              <div class="txt">
+                <strong><%= job.resumes.count %></strong>人
+              </div></div>
+              <div><div class="title">已推荐</div><div class="txt"><strong>4</strong>人</div></div>
+              <div><div class="title">已浏览</div><div class="txt"><strong>188</strong>人</div></div>
+            </div>
+            <div class="time"><i class="icons icon-time"></i><div class="txt">发布时间：<%= relative_time(job.created_at) %></div></div>
+          </div>
+        </a>
+      </li>
+      <% end %>
+    </ul>
+  </div>
 </div>
