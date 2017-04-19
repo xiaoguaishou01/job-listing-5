@@ -6,35 +6,42 @@
         抱歉！没有搜索到结果！
       </div>
     <% else %>
-    <table class="table table-boldered">
-        <thead>
-            <tr>
-                <td>职缺</td>
-                <td>工作种类</td>
-                <td>薪资下限</td>
-                <td>薪资上限</td>
-                <td>公司名称</td>
-                <td>公司地点</td>
-                <td>刊登时间</td>
-            </tr>
-        </thead>
-        <tbody>
-            <% @jobs.each do |job| %>
-            <tr>
-                <td><%= link_to(job.title, job_path(job)) %></td>
-                <td><%#= job.sort%></td>
-                <td><%= job.wage_lower_bound %></td>
-                <td><%= job.wage_upper_bound %></td>
-                <td> <%#= job.CompanyName %></td>
-                <td>
-                  <span class="fa fa-map-marker"></span>
-                  <%#= job.company %>
-                </td>
-                <td><%= job.created_at %></td>
-            </tr>
-            <% end %>
-        </tbody>
-    </table>
+    <div class="project_list container">
+      <ul class="list-unstyled">
+        <% @jobs.each do |job| %>
+        <li>
+          <a href="<%= job_path(job) %>">
+            <div class="project_type develop"><i class="icons"></i>
+              <%= job.sort%>
+              <i class="new">HOT</i></div>
+              <div class="project_main">
+                <h3><%= job.title%></h3>
+                <div class="price">
+                  <span class="range">
+                  ￥<%= job.wage_lower_bound%>-
+                    <%= job.wage_upper_bound %>
+                  </span>
+                </div>
+                <span class="fa fa-map-marker"></span>
+                <%= job.CompanyLocation%>
+                <div class="status">
+                  <span class="recruiting">招募中</span>
+                </div>
+                <div class="bottom_data">
+                  <div><div class="title">已申请</div>
+                  <div class="txt">
+                    <strong><%= job.resumes.count %></strong>人
+                  </div></div>
+                  <div><div class="title">已推荐</div><div class="txt"><strong>4</strong>人</div></div>
+                  <div><div class="title">已浏览</div><div class="txt"><strong><%= job.viewed_count %></strong>人</div></div>
+                </div>
+                <div class="time"><i class="icons icon-time"></i><div class="txt">发布时间：<%= relative_time(job.created_at) %></div></div>
+              </div>
+            </a>
+          </li>
+          <% end %>
+        </ul>
+      </div>
     <% end %>
   </div>
 </div>

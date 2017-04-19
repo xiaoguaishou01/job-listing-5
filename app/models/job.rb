@@ -19,12 +19,7 @@ class Job < ApplicationRecord
   has_many :resumes
 
   def view!
-    if self.viewed_count.nil?
-      self.viewed_count = 1
-      self.save
-    else
       self.viewed_count += 1
       self.save
-    end
   end
 end

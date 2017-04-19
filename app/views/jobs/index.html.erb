@@ -49,24 +49,37 @@
 <div class="container-1">
 
   <h1 class="text-center">热门职位招聘中</h1>
-  <hr>
 </div>
 
-
+<div class="container tabs">
+<ul class="nav nav-tabs">
+    <li class="active"><a href="/jobs">全部</a></li>
+ 	<li><a href="/jobs?where=程序员">程序员</a></li>
+ 	<li><a href="/jobs?where=技术">技术</a></li>
+ 	<li><a href="/jobs?where=产品">产品</a></li>
+  <li><a href="/jobs?where=运营">运营</a></li>
+  <li><a href="/jobs?where=设计">设计</a></li>
+  <li><a href="/jobs?where=市场与营销">市场与营销</a></li>
+  <li><a href="/jobs?where=职能">职能</a></li>
+  <li><a href="/jobs?where=金融">金融</a></li>
+  <li><a href="/jobs?where=管理">管理</a></li>
+  <li><a href="/jobs?where=">更多</a></li>
+</ul>
+</div>
+<br>
 <div class="project_list container">
   <ul class="list-unstyled">
     <% @jobs.each do |job| %>
     <li>
       <a href="<%= job_path(job) %>">
-        <div class="project_type develop"><i class="icons icon-develop"></i>
+        <div class="project_type develop"><i class="icons"></i>
           <%= job.sort%>
           <i class="new">HOT</i></div>
           <div class="project_main">
-
             <h3><%= job.title%></h3>
             <div class="price">
               <span class="range">
-                <%= job.wage_lower_bound%>-
+              ￥<%= job.wage_lower_bound%>-
                 <%= job.wage_upper_bound %>
               </span>
             </div>
@@ -81,7 +94,7 @@
                 <strong><%= job.resumes.count %></strong>人
               </div></div>
               <div><div class="title">已推荐</div><div class="txt"><strong>4</strong>人</div></div>
-              <div><div class="title">已浏览</div><div class="txt"><strong>188</strong>人</div></div>
+              <div><div class="title">已浏览</div><div class="txt"><strong><%= job.viewed_count %></strong>人</div></div>
             </div>
             <div class="time"><i class="icons icon-time"></i><div class="txt">发布时间：<%= relative_time(job.created_at) %></div></div>
           </div>

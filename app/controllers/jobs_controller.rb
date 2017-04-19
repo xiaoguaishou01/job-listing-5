@@ -8,18 +8,15 @@ before_action :validate_search_key, only: [:search]
       flash[:warning] = "This Job already archieved"
       redirect_to root_path
     end
-
+    @job.view!
   end
 
   def index
-    @jobs = case params[:order]
-            when 'by_lower_bound'
-              Job.published.order('wage_lower_bound DESC')
-            when 'by_upper_bound'
-              Job.published.order('wage_upper_bound DESC')
-            else
-              Job.published.recent
-            end
+    if params[:where].nil?
+      @jobs = Job.all
+    else
+    @jobs = Job.where(:sort => params[:where])
+    end
   end
 
   def new
@@ -66,7 +63,7 @@ before_action :validate_search_key, only: [:search]
     @query_string = params[:q].gsub(/\\|\'|\/|\?/, "")
     if params[:q].present?
       @search_criteria =  {
-        title_cont: @query_string
+        title_or_sort_or_CompanyName_or_CompanyLocation_cont: @query_string
       }
     end
   end
@@ -84,6 +81,6 @@ before_action :validate_search_key, only: [:search]
   private
 
   def job_params
-    params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :contact_email, :is_hidden, :sort, :CompanyName, :CompanyLocation)
+    params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :contact_email, :is_hidden, :sort, :CompanyName, :CompanyLocation, :viewed_count)
   end
 end
