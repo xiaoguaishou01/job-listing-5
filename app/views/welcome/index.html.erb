@@ -167,7 +167,7 @@
         </ul>
         <div class="clearfix"> </div>
       </section>
-      <script type="text/javascript" src="http://demo.cssmoban.com/cssthemes3/cpts_401_pz/js/jquery.hoverdir.js"></script>
+      <%= content_for :handwrite_javascript do %>
       <script type="text/javascript">
       $(function() {
 
@@ -175,6 +175,7 @@
 
       });
       </script>
+      <% end %>
     </div>
   </div>
 </div>
@@ -221,5 +222,3 @@
 
 </section>
 </div>
-
-<script src="http://demo.cssmoban.com/cssthemes3/cpts_401_pz/js/modernizr.custom.97074.js"></script>

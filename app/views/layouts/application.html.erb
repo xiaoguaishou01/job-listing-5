@@ -5,7 +5,7 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
@@ -17,6 +17,9 @@
      </div>
 
      <%= render "common/footer" %>
+     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+         <script type="text/javascript" src="http://demo.cssmoban.com/cssthemes3/cpts_401_pz/js/jquery.hoverdir.js"></script>
+     <%= yield :handwrite_javascript %>
+     <script type="text/javascript" src="http://demo.cssmoban.com/cssthemes3/cpts_401_pz/js/modernizr.custom.97074.js"></script>
   </body>
-  <script src=http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js></script>
 </html>
