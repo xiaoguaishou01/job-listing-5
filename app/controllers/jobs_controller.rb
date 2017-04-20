@@ -13,10 +13,11 @@ before_action :validate_search_key, only: [:search]
 
   def index
     if params[:where].nil?
-      @jobs = Job.all
+      @jobs = Job.all.paginate(:page => params[:page], :per_page => 9)
     else
-    @jobs = Job.where(:sort => params[:where])
+    @jobs = Job.where(:sort => params[:where]).paginate(:page => params[:page], :per_page => 9)
     end
+
   end
 
   def new
