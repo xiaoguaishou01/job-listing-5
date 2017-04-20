@@ -127,13 +127,13 @@
 
  .btn-danger {
     color: #fff;//字体颜色
-    background-color: #ff7e5f;//背景颜色
-    border-color: #ff7e5f;//边框颜色
+    background-color: #45b649;//背景颜色
+    border-color: #45b649;//45b649
 }
 
 .btn-danger:hover {
-    background-color: #feb47b;//鼠标放置在btn上的背景颜色
-    border-color: #feb47b;//鼠标放置在btn上的边框颜色
+    background-color: #a1ffce;//鼠标放置在btn上的背景颜色
+    border-color: #a1ffce;//鼠标放置在btn上的边框颜色
 }
 
 
@@ -172,7 +172,9 @@ body{
   padding: 5em;
   font-size: 2em;
   //background: #d7d2cc;
-  height: auto;
+
+  margin-left: 50px;
+  margin-right: 50px;
 
 }
 
@@ -245,7 +247,7 @@ body{
   text-align: center;
   text-transform: capitalize;
 }
-.gallery-grids {
+.gallery-grids{
   margin-top: 3em;
 }
 /*--//gallery--*/
@@ -485,4 +487,11 @@ body{
 
 .new-footer{
   background-color: #F2F2F5;
+}
+
+.sort-img{
+  width: 230px;
+  height: 260px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
