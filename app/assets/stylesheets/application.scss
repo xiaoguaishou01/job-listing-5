@@ -116,9 +116,9 @@
 
 .navbar-default{
   //background: #d7d2cc;
-
+  background: linear-gradient(to bottom right, #000000, #434343);
+  border-color: #434343;//鼠标放置在btn上的边框颜色
   }
- //background: linear-gradient(to bottom right, #304352, #d7d2cc);}
 
 
  .carousel-caption{ //首页大图
@@ -478,6 +478,12 @@ body{
 .icon-develop:before {
 	//content:"\e916"
 }
+.sort-img{
+  width: 230px;
+  height: 260px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 /*!index/modules/exposure-project/main.less*/
 
 .show{
@@ -485,13 +491,7 @@ body{
 
 }
 
-.new-footer{
-  background-color: #F2F2F5;
-}
-
-.sort-img{
-  width: 230px;
-  height: 260px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+.container-footer{
+  padding: 25px;
+  background-color: #434343;
 }
