@@ -3,9 +3,8 @@
   <head>
     <title>JobListing</title>
     <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
-    <%#= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
- <link rel="stylesheet" media="all" href="https://boiling-woodland-27697.herokuapp.com/assets/application-fdafe4fdc9fa708a1873a24d7540d25d18e3f8f08b27431c015dce78d066b707.css" data-turbolinks-track="reload" />
   </head>
 
   <body>
@@ -17,8 +16,8 @@
      </div>
 
      <%= render "common/footer" %>
-     <script src="https://boiling-woodland-27697.herokuapp.com/assets/application-252ac67bb25bffa89675a79770450d3e68e5ddf7145049e653235e44a566403e.js" data-turbolinks-track="reload"></script>
-     <%#= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
          <script type="text/javascript" src="http://demo.cssmoban.com/cssthemes3/cpts_401_pz/js/jquery.hoverdir.js"></script>
      <%= yield :handwrite_javascript %>
      <script type="text/javascript" src="http://demo.cssmoban.com/cssthemes3/cpts_401_pz/js/modernizr.custom.97074.js"></script>
