@@ -156,7 +156,7 @@ body{
   padding-top: 50px;
   //margin-left: -15px;
   //margin-right: -15px;
-  padding-bottom: 50px;
+  //padding-bottom: 50px;
 }
 
 .carousel .item {
@@ -229,6 +229,7 @@ body{
   background:rgba(90, 204, 66, 0.79);
   width: 100%;
   height: 100%;
+
 }
 .da-thumbs li a div span {
   display: block;
@@ -478,12 +479,7 @@ body{
 .icon-develop:before {
 	//content:"\e916"
 }
-.sort-img{
-  width: 230px;
-  height: 260px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
+
 /*!index/modules/exposure-project/main.less*/
 
 .show{
