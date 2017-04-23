@@ -1,37 +1,19 @@
-<div class="col-md-8 show">
-  <a href="/jobs" class="btn btn-default">
-    <span class="fa fa-arrow-left" style="margin-right: 10px;"></span>
-    返回工作列表
-  </a>
-
-  <p>
-    <br/>
-    <a style="font-size: 20px;" href="#"><%= @job.CompanyName %></a>
-  </p>
-  <h2> <%= @job.title %> </h2>
-  <p class="info">
-    <span class="salary">
-      <span class="label label-default">
-        <%= @job.wage_lower_bound %>
-      </span>
-      - <span class="label label-default">
-        <%= @job.wage_upper_bound %>
-      </span>
-    </span>
-    <span>/</span>
-    <span><span class="fa fa-map-marker"></span>
-    <%= @job.CompanyLocation %>
-  </span>
-  <span>/</span>
-  <span><span class="fa fa-calendar"></span>
-  <%= @job.created_at %>
-</span>
-</p>
-<hr>
-<p>
-  <%= simple_format(@job.description) %>
-</p>
-<div class="text-center">
-  <%= link_to("投交履历", new_job_resume_path(@job), :style => "font-size: 30px; text-decoration:underline;") %>
-</div>
+<button class="btn btn-primary" data-toggle="modal" data-target="#mymodal-data" type="button">通过data-target触发</button>
+<!-- 模态弹出窗内容 -->
+<div class="modal fade bs-example-modal-lg" id="mymodal-data" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				<h4 class="modal-title">模态弹出窗标题</h4>
+			</div>
+			<div class="modal-body">
+				<p>模态弹出窗主体内容</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+				<button type="button" class="btn btn-primary">保存</button>
+			</div>
+		</div>
+	</div>
 </div>
